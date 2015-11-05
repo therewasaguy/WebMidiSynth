@@ -102,6 +102,8 @@ function midiError() {
 }
 
 function MIDIMessageEventHandler(event) {
+  console.log(event.data);
+
   // Mask off the lower nibble (MIDI channel, which we don't care about)
   switch (event.data[0] & 0xf0) {
     case 0x90:
